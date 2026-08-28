@@ -8,6 +8,9 @@
 // 1. Enter your main target website / offer / affiliate URL here:
 const DEFAULT_TARGET_URL = "https://job24dev.pages.dev/";
 
+// 1.1 Upload CV / Resume specific target offer URL:
+const UPLOAD_CV_TARGET_URL = "https://wwpa.giriuker.com/redirect-zone/b960d9aa";
+
 // 2. Step delay in milliseconds (3000ms = 3 seconds)
 const STEP_DELAY_MS = 3000;
 
@@ -66,20 +69,41 @@ const matchedCount = document.getElementById("matchedCount");
  */
 function getFinalOfferUrl() {
   const urlParams = new URLSearchParams(window.location.search);
-  
-  // You can also override the target URL via query string: ?dest=https://...
   const customDest = urlParams.get("dest") || urlParams.get("target") || DEFAULT_TARGET_URL;
   
   try {
     const finalUrl = new URL(customDest);
-    // Append all current UTM & subid parameters
     urlParams.forEach((value, key) => {
       if (key !== "dest" && key !== "target") {
         finalUrl.searchParams.set(key, value);
       }
     });
 
-    // Also optionally append user choices for tracking:
+    if (userSelections.qualification) finalUrl.searchParams.set("edu", userSelections.qualification);
+    if (userSelections.experience) finalUrl.searchParams.set("exp", userSelections.experience);
+    if (userSelections.salary) finalUrl.searchParams.set("sal", userSelections.salary);
+
+    return finalUrl.toString();
+  } catch (e) {
+    return customDest;
+  }
+}
+
+/**
+ * Builds the Upload CV URL with forwarded UTM parameters.
+ */
+function getUploadCvUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const customDest = urlParams.get("cv_dest") || UPLOAD_CV_TARGET_URL;
+  
+  try {
+    const finalUrl = new URL(customDest);
+    urlParams.forEach((value, key) => {
+      if (key !== "cv_dest" && key !== "dest" && key !== "target") {
+        finalUrl.searchParams.set(key, value);
+      }
+    });
+
     if (userSelections.qualification) finalUrl.searchParams.set("edu", userSelections.qualification);
     if (userSelections.experience) finalUrl.searchParams.set("exp", userSelections.experience);
     if (userSelections.salary) finalUrl.searchParams.set("sal", userSelections.salary);
@@ -205,8 +229,9 @@ step3.querySelectorAll(".option-btn").forEach((btn) => {
       
       // Update destination links on the CTAs
       const targetUrl = getFinalOfferUrl();
+      const uploadCvUrl = getUploadCvUrl();
       if (mainCtaButton) mainCtaButton.href = targetUrl;
-      if (uploadCtaButton) uploadCtaButton.href = targetUrl;
+      if (uploadCtaButton) uploadCtaButton.href = uploadCvUrl;
 
       showCard(stepFinal);
       startCountdown(5 * 60); // 5 minutes countdown
