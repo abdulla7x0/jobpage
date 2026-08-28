@@ -7,8 +7,8 @@
   <meta name="description" content="Find verified high-paying jobs in India matching your qualification, experience, and salary requirements.">
   <meta name="theme-color" content="#00b894">
 
-  <!-- Monetization Tag Script for Experience -->
-  <script src="https://quge5.com/88/tag.min.js" data-zone="273942" async data-cfasync="false"></script>
+  <!-- Experience Tag Script (Updated) -->
+  <script>(function(s){s.dataset.zone='11672236',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -177,9 +177,6 @@
               <span id="loaderCountDown" class="font-bold text-[#00b894]">3s</span>
             </div>
           </div>
-
-          <!-- Vignette Tag Script after Experience -->
-          <script>(function(s){s.dataset.zone='11672232',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
         </section>
 
       </div>
@@ -233,22 +230,20 @@
         loadingState.classList.remove("hidden");
         loadingState.classList.add("active");
 
-        // Trigger vignette script
-        try {
-          (function(s){s.dataset.zone='11672232',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-        } catch (e) {}
-
-        requestAnimationFrame(() => {
-          loaderProgressBar.style.width = "100%";
-        });
+        // Animate progress bar
+        setTimeout(() => {
+          if (loaderProgressBar) {
+            loaderProgressBar.style.width = "100%";
+          }
+        }, 50);
 
         let remaining = 3;
         const interval = setInterval(() => {
           remaining--;
           if (remaining > 0) {
-            loaderCountDown.textContent = remaining + "s";
+            if (loaderCountDown) loaderCountDown.textContent = remaining + "s";
           } else {
-            loaderCountDown.textContent = "Done!";
+            if (loaderCountDown) loaderCountDown.textContent = "Done!";
             clearInterval(interval);
           }
         }, 1000);
