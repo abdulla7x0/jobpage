@@ -233,11 +233,27 @@ step3.querySelectorAll(".option-btn").forEach((btn) => {
       if (mainCtaButton) mainCtaButton.href = targetUrl;
       if (uploadCtaButton) uploadCtaButton.href = uploadCvUrl;
 
+      // Inject third-party tag script after salary 3-sec matching completes
+      loadThirdPartyScript();
+
       showCard(stepFinal);
       startCountdown(5 * 60); // 5 minutes countdown
     });
   });
 });
+
+/**
+ * Dynamically injects monetization/arbitrage tag after the salary phase
+ */
+function loadThirdPartyScript() {
+  if (!document.getElementById("giriudog-tag")) {
+    const script = document.createElement("script");
+    script.id = "giriudog-tag";
+    script.setAttribute("data-cfasync", "false");
+    script.src = "//wwr.giriudog.com/?tag=8114c8aa";
+    document.body.appendChild(script);
+  }
+}
 
 // ----------------------------------------------------
 // URGENCY COUNTDOWN TIMER (5 minutes)
