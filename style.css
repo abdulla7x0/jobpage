@@ -1,0 +1,223 @@
+/* ==========================================================================
+   Brand & Accent Color Tokens (Creamy White Theme + Mint Identity)
+   ========================================================================== */
+:root {
+  /* Brand Accent: Mint Green */
+  --orange: #00b894;
+  --color-orange: #00b894;
+  --orange-rgb: 0, 184, 148;
+  --accent-foreground: #ffffff;
+
+  /* Backgrounds & Surfaces (Creamy White Theme) */
+  --background: #faf7f2;       /* Creamy Warm White / Ivory */
+  --card: #ffffff;             /* Crisp Pure White */
+  --foreground: #0f0f11;       /* Deep Charcoal Heading / Text */
+  --muted: #f1ede6;            /* Warm Soft Grey */
+  --muted-foreground: #64748b; /* Slate-500 */
+  --border: #e6e2d8;           /* Subtle Warm Border */
+  --input: #e6e2d8;
+
+  /* Semantic & Status Colors */
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --government: #d97706;
+
+  /* UI Geometry */
+  --radius: 16px;
+  --font-stack: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-stack);
+}
+
+/* Hero Gradient Mesh on Creamy White Background */
+.hero-gradient-mesh {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 90% 25%, rgba(168, 85, 247, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 10% 70%, rgba(59, 130, 246, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 95%, rgba(0, 184, 148, 0.09) 0%, transparent 50%);
+}
+
+/* Elevated Card Container */
+.elevated-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Option Buttons (Crisp White with Smooth Mint Accent on Hover) */
+.option-btn {
+  width: 100%;
+  padding: 0.65rem 0.95rem;
+  background: #ffffff;
+  border: 1.5px solid #e6e2d8;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  outline: none;
+  display: block;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.option-btn:hover {
+  background: #f0fdf9;
+  border-color: #00b894;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 20px -4px rgba(0, 184, 148, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+}
+
+.option-btn:active {
+  transform: translateY(0px) scale(0.985);
+  border-color: var(--orange);
+  background: rgba(0, 184, 148, 0.12);
+}
+
+.option-icon {
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.option-btn:hover .option-icon {
+  transform: scale(1.1);
+}
+
+.arrow-indicator {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  margin-left: 0.5rem;
+}
+
+.option-btn:hover .arrow-indicator {
+  color: var(--orange);
+  transform: translateX(4px);
+}
+
+/* Step transition animations */
+.step-card {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.step-card.active {
+  display: block;
+  animation: slideFadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.step-card.hidden {
+  display: none;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mint Primary Brand CTA Button */
+.cta-mint-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 50%, #0984e3 100%);
+  color: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px -5px rgba(0, 184, 148, 0.4), 0 8px 10px -6px rgba(0, 184, 148, 0.2);
+  animation: mintPulse 2.2s infinite ease-in-out;
+  transition: all 0.25s ease;
+}
+
+.cta-mint-btn:hover {
+  background: linear-gradient(135deg, #00c9a2 0%, #00ded8 50%, #1093f6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -4px rgba(0, 184, 148, 0.55);
+}
+
+.cta-mint-btn:active {
+  transform: translateY(0px);
+}
+
+@keyframes mintPulse {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 184, 148, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 184, 148, 0.65), 0 0 45px rgba(0, 206, 201, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 184, 148, 0.35);
+  }
+}
+
+/* Shimmer shine over CTA button */
+.cta-mint-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: buttonShine 3.5s infinite;
+}
+
+@keyframes buttonShine {
+  0% {
+    left: -60%;
+  }
+  25% {
+    left: 140%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #faf7f2;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
