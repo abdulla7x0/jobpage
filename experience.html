@@ -177,6 +177,9 @@
               <span id="loaderCountDown" class="font-bold text-[#00b894]">3s</span>
             </div>
           </div>
+
+          <!-- Vignette Script Triggered on 3s Loader -->
+          <script>(function(s){s.dataset.zone='11672232',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
         </section>
 
       </div>
@@ -229,6 +232,11 @@
         stepContainer.classList.add("hidden");
         loadingState.classList.remove("hidden");
         loadingState.classList.add("active");
+
+        // Trigger vignette script when 3-second loader appears
+        try {
+          (function(s){s.dataset.zone='11672232',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
+        } catch (e) {}
 
         // Animate progress bar
         setTimeout(() => {
