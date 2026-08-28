@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CareerMatch - Expected Salary & Job Matches</title>
+  <meta name="description" content="Find verified high-paying jobs in India matching your qualification, experience, and salary requirements.">
+  <meta name="theme-color" content="#00b894">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            background: '#faf7f2',
+            card: '#ffffff',
+            foreground: '#0f0f11',
+            muted: '#f1ede6',
+            'muted-foreground': '#64748b',
+            border: '#e6e2d8',
+            orange: '#00b894',
+            mint: '#00b894',
+            success: '#16a34a',
+            warning: '#d97706',
+            danger: '#dc2626',
+          },
+          borderRadius: {
+            '2xl': '16px',
+            'xl': '12px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS Tokens & Animations -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#faf7f2] text-[#0f0f11] min-h-screen flex items-center justify-center selection:bg-[#00b894] selection:text-white antialiased">
+
+  <!-- Hero Gradient Mesh (Subtle Warm Creamy Radial Blend) -->
+  <div class="hero-gradient-mesh"></div>
+
+  <!-- Main Content Container -->
+  <main class="relative z-10 w-full flex items-center justify-center px-4 py-6 sm:py-10">
+    <div class="w-full max-w-lg mx-auto">
+
+      <!-- Progress Section (Step Indicator) -->
+      <div id="progressContainer" class="mb-4 bg-white/90 backdrop-blur-md rounded-2xl p-3.5 border border-[#e6e2d8] shadow-sm">
+        <div class="flex items-center justify-between text-xs font-semibold mb-2">
+          <span class="text-[#00b894] uppercase tracking-wider flex items-center gap-1.5 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#00b894]"></span>
+            <span>Step 3 of 3: Salary</span>
+          </span>
+          <span class="text-[#64748b] font-medium">95% Completed</span>
+        </div>
+        <div class="w-full bg-[#f1ede6] rounded-full h-1.5 overflow-hidden">
+          <div class="bg-gradient-to-r from-[#00b894] via-[#00cec9] to-emerald-500 h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 95%;"></div>
+        </div>
+      </div>
+
+      <!-- Elevated Main Card -->
+      <div class="elevated-card p-5 sm:p-7 overflow-hidden">
+        
+        <!-- STEP 3: SALARY QUESTION -->
+        <section id="stepContainer" class="step-card active">
+          <div class="text-center mb-5">
+            <span class="inline-block px-2.5 py-0.5 bg-[#00b894]/10 border border-[#00b894]/25 text-[#00b894] text-[11px] font-bold rounded-full mb-2">
+              💰 Step 3: Expected Compensation
+            </span>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-[#0f0f11] tracking-tight">
+              Expected Monthly Salary
+            </h1>
+            <p class="text-xs text-[#64748b] mt-1.5">
+              Select your targeted monthly payout to finalize matching employers.
+            </p>
+          </div>
+
+          <div class="space-y-2.5">
+            <button class="option-btn group" data-value="sal_tier1">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center space-x-3">
+                  <div class="option-icon bg-[#00b894]/10 text-[#00b894] border border-[#00b894]/20">
+                    💵
+                  </div>
+                  <div class="text-left">
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">₹25,000 – ₹45,000 / month</div>
+                    <div class="text-[11px] text-[#64748b]">Entry to mid-range roles & starter packages</div>
+                  </div>
+                </div>
+                <div class="arrow-indicator">→</div>
+              </div>
+            </button>
+
+            <button class="option-btn group" data-value="sal_tier2">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center space-x-3">
+                  <div class="option-icon bg-emerald-50 text-emerald-600 border border-emerald-200">
+                    💰
+                  </div>
+                  <div class="text-left">
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">₹45,000 – ₹80,000 / month</div>
+                    <div class="text-[11px] text-[#64748b]">Work from home & high-demand technical jobs</div>
+                  </div>
+                </div>
+                <div class="arrow-indicator">→</div>
+              </div>
+            </button>
+
+            <button class="option-btn group" data-value="sal_tier3">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center space-x-3">
+                  <div class="option-icon bg-amber-50 text-amber-600 border border-amber-200">
+                    💎
+                  </div>
+                  <div class="text-left">
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">₹80,000 – ₹1,50,000+ / month</div>
+                    <div class="text-[11px] text-[#64748b]">Senior positions & corporate specialists</div>
+                  </div>
+                </div>
+                <div class="arrow-indicator">→</div>
+              </div>
+            </button>
+
+            <button class="option-btn group" data-value="sal_open">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center space-x-3">
+                  <div class="option-icon bg-purple-50 text-purple-600 border border-purple-200">
+                    ✨
+                  </div>
+                  <div class="text-left">
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">Flexible / Negotiable</div>
+                    <div class="text-[11px] text-[#64748b]">Show all high paying openings available</div>
+                  </div>
+                </div>
+                <div class="arrow-indicator">→</div>
+              </div>
+            </button>
+          </div>
+
+          <!-- Step 3 Ad Banner -->
+          <div class="mt-4 flex justify-center overflow-hidden">
+            <script>
+              atOptions = {
+                'key' : '4b681073403eeb8735708f877401c78b',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highrevenueformat.com/4b681073403eeb8735708f877401c78b/invoke.js"></script>
+          </div>
+        </section>
+
+        <!-- 3-SECOND INTERSTITIAL LOADING CARD -->
+        <section id="loadingState" class="step-card hidden py-6 text-center">
+          <!-- Mint Animated Radar / Scanner Icon -->
+          <div class="relative w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full border-4 border-[#00b894]/20 animate-ping"></div>
+            <div class="absolute inset-2 rounded-full border-4 border-t-[#00b894] border-r-[#00cec9] border-b-transparent border-l-transparent animate-spin"></div>
+            <div class="w-12 h-12 rounded-full bg-[#00b894]/10 border border-[#00b894]/30 flex items-center justify-center shadow-inner">
+              <svg class="w-6 h-6 text-[#00b894] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-[#0f0f11] mb-1.5">
+            Generating Verified Job Matches...
+          </h3>
+          <p class="text-sm text-[#64748b] max-w-sm mx-auto mb-5 min-h-[36px]">
+            Locking in top compensation packages and preparing your direct application links...
+          </p>
+
+          <!-- 3-Second Visual Progress Indicator -->
+          <div class="max-w-xs mx-auto mb-4">
+            <div class="w-full bg-[#f1ede6] rounded-full h-2 overflow-hidden border border-[#e6e2d8]">
+              <div id="loaderProgressBar" class="h-2 bg-gradient-to-r from-[#00b894] via-[#00cec9] to-[#16a34a] rounded-full w-0 transition-all duration-[3000ms] ease-linear"></div>
+            </div>
+            <div class="flex justify-between items-center text-[11px] text-[#64748b] font-mono mt-1.5">
+              <span>Matching records</span>
+              <span id="loaderCountDown" class="font-bold text-[#00b894]">3s</span>
+            </div>
+          </div>
+
+          <!-- 3-Sec Loading Timer Ad Placements (300x250 and 728x90) -->
+          <div class="mt-4 flex flex-col items-center justify-center gap-3 overflow-hidden">
+            <div class="flex justify-center w-full overflow-hidden">
+              <script>
+                atOptions = {
+                  'key' : 'd47262df5f3e51efe8697c83787c699a',
+                  'format' : 'iframe',
+                  'height' : 250,
+                  'width' : 300,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highrevenueformat.com/d47262df5f3e51efe8697c83787c699a/invoke.js"></script>
+            </div>
+
+            <div class="flex justify-center w-full overflow-hidden max-w-full">
+              <script>
+                atOptions = {
+                  'key' : 'c56dc11a963bf3c742b2a9e954b2b6d8',
+                  'format' : 'iframe',
+                  'height' : 90,
+                  'width' : 728,
+                  'params' : {}
+                };
+              </script>
+              <script src="https://www.highrevenueformat.com/c56dc11a963bf3c742b2a9e954b2b6d8/invoke.js"></script>
+            </div>
+          </div>
+        </section>
+
+        <!-- FINAL STEP: RESULTS / CTA BUTTONS -->
+        <section id="stepFinal" class="step-card hidden text-center">
+          
+          <!-- Mint Checkmark Badge -->
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-tr from-[#00b894] to-[#00cec9] text-white shadow-xl shadow-[#00b894]/25 mb-5 animate-bounce">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+
+          <div class="inline-block px-3 py-1 bg-[#00b894]/10 border border-[#00b894]/30 text-[#00b894] text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
+            ✓ 100% Profile Matched
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0f0f11] tracking-tight">
+            Congratulations! <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00b894] to-[#0284c7]"><span id="matchedCount">28</span> Verified Jobs Available</span>
+          </h2>
+
+          <p class="text-sm text-[#64748b] mt-3 max-w-md mx-auto">
+            Direct hiring portals have been unlocked for your criteria. Click below to view available vacancies and apply immediately.
+          </p>
+
+          <!-- Aggregated Job Sources -->
+          <div class="mt-5 mb-4 flex flex-wrap items-center justify-center gap-2">
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-blue-50 text-blue-700 border border-blue-200">LinkedIn Jobs</span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-sky-50 text-sky-700 border border-sky-200">Naukri.com</span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">Indeed</span>
+            <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-[#00b894]/10 text-[#00b894] border border-[#00b894]/30 font-bold">Direct Hiring</span>
+          </div>
+
+          <!-- Match Highlights Card -->
+          <div class="my-5 p-4 rounded-2xl bg-[#faf8f5] border border-[#e6e2d8] text-left space-y-2.5">
+            <div class="flex items-center justify-between text-xs py-1 border-b border-[#e6e2d8]">
+              <span class="text-[#64748b]">Role Types:</span>
+              <span class="font-semibold text-[#0f0f11]">Work From Home / Hybrid / On-Site</span>
+            </div>
+            <div class="flex items-center justify-between text-xs py-1 border-b border-[#e6e2d8]">
+              <span class="text-[#64748b]">Hiring Status:</span>
+              <span class="font-semibold text-emerald-600 flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Actively Recruiting Now
+              </span>
+            </div>
+            <div class="flex items-center justify-between text-xs py-1">
+              <span class="text-[#64748b]">Application Access:</span>
+              <span class="font-semibold text-[#00b894]">Free Direct Apply Portal</span>
+            </div>
+          </div>
+
+          <!-- Urgency Countdown Banner -->
+          <div class="flex items-center justify-center gap-2 text-xs text-amber-900 bg-amber-50 border border-amber-200 py-2 px-4 rounded-xl mb-6">
+            <svg class="w-4 h-4 text-amber-600 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+            <span>Reserved opening slots expire in: <strong id="timerDisplay" class="font-mono font-bold text-amber-700">04:59</strong></span>
+          </div>
+
+          <!-- UPLOAD CV ACTION BUTTON (Styled as upload box, opens target URL) -->
+          <a id="uploadCtaButton"
+             href="https://wwpa.giriuker.com/redirect-zone/b960d9aa"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="group w-full flex items-center justify-between p-3.5 mb-3 bg-emerald-50/80 hover:bg-emerald-50 border-2 border-dashed border-[#00b894] hover:border-[#00a884] rounded-2xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-sm text-left">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-xl bg-[#00b894]/15 text-[#00b894] flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-extrabold text-[#0f0f11] flex items-center gap-1.5">
+                  <span>Upload Resume / CV</span>
+                  <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b894] text-white">Recommended</span>
+                </div>
+                <div class="text-[11px] text-[#64748b]">PDF, DOC, DOCX (Fast-Track 1-Click Apply)</div>
+              </div>
+            </div>
+            <div class="text-xs font-bold text-[#00b894] group-hover:translate-x-1 transition-transform flex items-center gap-1 flex-shrink-0">
+              <span class="hidden sm:inline">Select File</span>
+              <span>→</span>
+            </div>
+          </a>
+
+          <!-- HIGH CONVERTING PRIMARY CTA BUTTON (Mint Gradient) -->
+          <a id="mainCtaButton" 
+             href="https://job24dev.pages.dev/" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="cta-mint-btn group w-full flex items-center justify-center gap-3 py-3.5 px-6 rounded-2xl font-extrabold text-base sm:text-lg text-white shadow-xl text-center">
+            <span>VIEW MATCHING JOBS NOW</span>
+            <svg class="w-5 h-5 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+
+          <!-- Secondary Micro-copy -->
+          <p class="text-[11px] text-[#64748b] mt-4 flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-[#64748b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            No registration fee required • 100% Verified Job Access
+          </p>
+
+          <!-- Step 4 Ad Banner -->
+          <div class="mt-4 flex justify-center overflow-hidden">
+            <script>
+              atOptions = {
+                'key' : '4b681073403eeb8735708f877401c78b',
+                'format' : 'iframe',
+                'height' : 60,
+                'width' : 468,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highrevenueformat.com/4b681073403eeb8735708f877401c78b/invoke.js"></script>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Trust Badges & Indian Testimonial Ticker -->
+      <div class="mt-7 text-center space-y-3.5">
+        <div class="flex flex-wrap items-center justify-center gap-5 text-xs text-[#64748b] font-medium">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Verified Indian Employers</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-[#00b894]" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>SSL Encrypted</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+            </svg>
+            <span>Direct Fast Apply</span>
+          </div>
+        </div>
+
+        <div id="toastNotification" class="inline-flex items-center gap-2.5 bg-white/95 border border-[#e6e2d8] text-[#334155] text-xs py-2 px-4 rounded-full shadow-md transition-all duration-300 opacity-95">
+          <span class="w-2 h-2 rounded-full bg-[#00b894]"></span>
+          <span id="toastText" class="font-medium text-slate-800">Rohan from Delhi just matched with a ₹85,000/mo Remote Role</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Configuration
+    const DEFAULT_TARGET_URL = "https://job24dev.pages.dev/";
+    const UPLOAD_CV_TARGET_URL = "https://wwpa.giriuker.com/redirect-zone/b960d9aa";
+
+    const stepContainer = document.getElementById("stepContainer");
+    const loadingState = document.getElementById("loadingState");
+    const stepFinal = document.getElementById("stepFinal");
+    const progressContainer = document.getElementById("progressContainer");
+    const loaderProgressBar = document.getElementById("loaderProgressBar");
+    const loaderCountDown = document.getElementById("loaderCountDown");
+    const mainCtaButton = document.getElementById("mainCtaButton");
+    const uploadCtaButton = document.getElementById("uploadCtaButton");
+    const timerDisplay = document.getElementById("timerDisplay");
+    const matchedCount = document.getElementById("matchedCount");
+
+    function getFinalOfferUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const customDest = urlParams.get("dest") || urlParams.get("target") || DEFAULT_TARGET_URL;
+      try {
+        const finalUrl = new URL(customDest);
+        urlParams.forEach((value, key) => {
+          if (key !== "dest" && key !== "target") finalUrl.searchParams.set(key, value);
+        });
+        return finalUrl.toString();
+      } catch (e) {
+        return customDest;
+      }
+    }
+
+    function getUploadCvUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const customDest = urlParams.get("cv_dest") || UPLOAD_CV_TARGET_URL;
+      try {
+        const finalUrl = new URL(customDest);
+        urlParams.forEach((value, key) => {
+          if (key !== "cv_dest" && key !== "dest" && key !== "target") finalUrl.searchParams.set(key, value);
+        });
+        return finalUrl.toString();
+      } catch (e) {
+        return customDest;
+      }
+    }
+
+    function injectThirdPartyTag() {
+      if (!document.getElementById("giriudog-tag")) {
+        const script = document.createElement("script");
+        script.id = "giriudog-tag";
+        script.setAttribute("data-cfasync", "false");
+        script.src = "//wwr.giriudog.com/?tag=8114c8aa";
+        document.body.appendChild(script);
+      }
+    }
+
+    function startCountdown(durationInSeconds) {
+      let timer = durationInSeconds;
+      const countdownInterval = setInterval(() => {
+        const minutes = Math.floor(timer / 60);
+        const seconds = timer % 60;
+        const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+        const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+        if (timerDisplay) timerDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
+        if (--timer < 0) {
+          clearInterval(countdownInterval);
+          if (timerDisplay) timerDisplay.textContent = "00:00";
+        }
+      }, 1000);
+    }
+
+    // Option Click Handler
+    document.querySelectorAll(".option-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const salValue = btn.getAttribute("data-value");
+        sessionStorage.setItem("sal", salValue);
+
+        // Update URL params
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set("sal", salValue);
+        window.history.replaceState({}, "", window.location.pathname + "?" + urlParams.toString());
+
+        // Show 3-second loader
+        stepContainer.classList.add("hidden");
+        loadingState.classList.remove("hidden");
+        loadingState.classList.add("active");
+
+        requestAnimationFrame(() => {
+          loaderProgressBar.style.width = "100%";
+        });
+
+        let remaining = 3;
+        const interval = setInterval(() => {
+          remaining--;
+          if (remaining > 0) {
+            loaderCountDown.textContent = remaining + "s";
+          } else {
+            loaderCountDown.textContent = "Done!";
+            clearInterval(interval);
+          }
+        }, 1000);
+
+        // Show final results after 3 seconds
+        setTimeout(() => {
+          progressContainer.classList.add("hidden");
+          loadingState.classList.add("hidden");
+
+          // Randomize matched count
+          if (matchedCount) {
+            matchedCount.textContent = Math.floor(Math.random() * 15) + 18;
+          }
+
+          // Update CTA URLs
+          if (mainCtaButton) mainCtaButton.href = getFinalOfferUrl();
+          if (uploadCtaButton) uploadCtaButton.href = getUploadCvUrl();
+
+          // Inject third-party tag script
+          injectThirdPartyTag();
+
+          stepFinal.classList.remove("hidden");
+          stepFinal.classList.add("active");
+          startCountdown(5 * 60);
+        }, 3000);
+      });
+    });
+
+    // Social proof toast
+    const sampleNames = ["Rohan D.", "Priya M.", "Rahul S.", "Neha P.", "Vikram R.", "Ananya S."];
+    const sampleLocations = ["Bangalore", "Mumbai", "Delhi NCR", "Hyderabad", "Pune", "Chennai"];
+    const sampleSalaries = ["₹35,000/mo", "₹50,000/mo", "₹65,000/mo", "₹85,000/mo"];
+    const sampleRoles = ["Work From Home Specialist", "Data Operations", "Project Coordinator", "Customer Support Lead"];
+    const toastNotification = document.getElementById("toastNotification");
+    const toastText = document.getElementById("toastText");
+
+    if (toastNotification && toastText) {
+      setInterval(() => {
+        const name = sampleNames[Math.floor(Math.random() * sampleNames.length)];
+        const loc = sampleLocations[Math.floor(Math.random() * sampleLocations.length)];
+        const salary = sampleSalaries[Math.floor(Math.random() * sampleSalaries.length)];
+        const role = sampleRoles[Math.floor(Math.random() * sampleRoles.length)];
+
+        toastNotification.style.opacity = '0';
+        setTimeout(() => {
+          toastText.textContent = `${name} from ${loc} matched with a ${salary} ${role} role`;
+          toastNotification.style.opacity = '0.95';
+        }, 300);
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

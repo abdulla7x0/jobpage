@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>CareerMatch - Select Qualification</title>
+  <title>CareerMatch - Work Experience</title>
   <meta name="description" content="Find verified high-paying jobs in India matching your qualification, experience, and salary requirements.">
   <meta name="theme-color" content="#00b894">
 
@@ -53,104 +53,89 @@
       <!-- Progress Section (Step Indicator) -->
       <div id="progressContainer" class="mb-4 bg-white/90 backdrop-blur-md rounded-2xl p-3.5 border border-[#e6e2d8] shadow-sm">
         <div class="flex items-center justify-between text-xs font-semibold mb-2">
-          <span class="text-[#00b894] uppercase tracking-wider flex items-center gap-1.5 font-bold">
-            <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#00b894]"></span>
-            <span>Step 1 of 3: Qualification</span>
+          <span class="text-indigo-600 uppercase tracking-wider flex items-center gap-1.5 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+            <span>Step 2 of 3: Experience</span>
           </span>
-          <span class="text-[#64748b] font-medium">33% Completed</span>
+          <span class="text-[#64748b] font-medium">66% Completed</span>
         </div>
         <div class="w-full bg-[#f1ede6] rounded-full h-1.5 overflow-hidden">
-          <div class="bg-gradient-to-r from-[#00b894] to-[#00cec9] h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 33%;"></div>
+          <div class="bg-gradient-to-r from-[#00b894] via-teal-500 to-indigo-600 h-1.5 rounded-full transition-all duration-500 ease-out" style="width: 66%;"></div>
         </div>
       </div>
 
       <!-- Elevated Main Card -->
       <div class="elevated-card p-5 sm:p-7 overflow-hidden">
         
-        <!-- STEP 1: QUALIFICATION QUESTION -->
+        <!-- STEP 2: EXPERIENCE QUESTION -->
         <section id="stepContainer" class="step-card active">
           <div class="text-center mb-5">
-            <span class="inline-block px-2.5 py-0.5 bg-[#00b894]/10 border border-[#00b894]/25 text-[#00b894] text-[11px] font-bold rounded-full mb-2">
-              🎓 Step 1: Educational Background
+            <span class="inline-block px-2.5 py-0.5 bg-indigo-50 border border-indigo-200 text-indigo-700 text-[11px] font-bold rounded-full mb-2">
+              💼 Step 2: Work Experience
             </span>
             <h1 class="text-xl sm:text-2xl font-extrabold text-[#0f0f11] tracking-tight">
-              Select Your Qualification
+              Total Work Experience
             </h1>
             <p class="text-xs text-[#64748b] mt-1.5">
-              Personalized job openings matching your educational background.
+              Helps us match fresher hiring, experienced roles, and compensation slabs.
             </p>
           </div>
 
           <div class="space-y-2.5">
-            <button class="option-btn group" data-value="high_school">
+            <button class="option-btn group" data-value="fresher">
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
                   <div class="option-icon bg-[#00b894]/10 text-[#00b894] border border-[#00b894]/20">
-                    🎒
+                    🌱
                   </div>
                   <div class="text-left">
-                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">10th / 12th Pass (Secondary)</div>
-                    <div class="text-[11px] text-[#64748b]">Entry positions & immediate joining</div>
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">Fresher / 0 - 1 Year</div>
+                    <div class="text-[11px] text-[#64748b]">Entry level, internships & fast-track roles</div>
                   </div>
                 </div>
                 <div class="arrow-indicator">→</div>
               </div>
             </button>
 
-            <button class="option-btn group" data-value="diploma">
+            <button class="option-btn group" data-value="mid_level">
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
-                  <div class="option-icon bg-indigo-50 text-indigo-600 border border-indigo-200">
-                    📜
+                  <div class="option-icon bg-sky-50 text-sky-600 border border-sky-200">
+                    ⚡
                   </div>
                   <div class="text-left">
-                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">Diploma / Polytechnic / ITI</div>
-                    <div class="text-[11px] text-[#64748b]">Technical & vocational certificates</div>
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">1 - 3 Years Experience</div>
+                    <div class="text-[11px] text-[#64748b]">Foundational work & career booster jobs</div>
                   </div>
                 </div>
                 <div class="arrow-indicator">→</div>
               </div>
             </button>
 
-            <button class="option-btn group" data-value="bachelor">
+            <button class="option-btn group" data-value="experienced">
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
                   <div class="option-icon bg-purple-50 text-purple-600 border border-purple-200">
-                    🎓
+                    🚀
                   </div>
                   <div class="text-left">
-                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">Graduate / Bachelor's Degree</div>
-                    <div class="text-[11px] text-[#64748b]">B.E, B.Tech, B.Com, B.Sc, B.A, BCA, etc.</div>
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">3 - 5+ Years Experience</div>
+                    <div class="text-[11px] text-[#64748b]">Mid-Senior & domain specialist openings</div>
                   </div>
                 </div>
                 <div class="arrow-indicator">→</div>
               </div>
             </button>
 
-            <button class="option-btn group" data-value="master_plus">
-              <div class="flex items-center justify-between w-full">
-                <div class="flex items-center space-x-3">
-                  <div class="option-icon bg-emerald-50 text-emerald-600 border border-emerald-200">
-                    🏛️
-                  </div>
-                  <div class="text-left">
-                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">Post Graduate / Master's / PhD</div>
-                    <div class="text-[11px] text-[#64748b]">MBA, M.Tech, M.Com, MCA, etc.</div>
-                  </div>
-                </div>
-                <div class="arrow-indicator">→</div>
-              </div>
-            </button>
-
-            <button class="option-btn group" data-value="no_degree">
+            <button class="option-btn group" data-value="expert">
               <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-3">
                   <div class="option-icon bg-amber-50 text-amber-600 border border-amber-200">
-                    💡
+                    👑
                   </div>
                   <div class="text-left">
-                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">Skill-Based / Non-Degree</div>
-                    <div class="text-[11px] text-[#64748b]">Practical experience & freelance focus</div>
+                    <div class="text-sm font-semibold text-[#0f0f11] group-hover:text-[#00b894] transition-colors">5+ Years / Senior Lead</div>
+                    <div class="text-[11px] text-[#64748b]">Leadership, managerial & executive roles</div>
                   </div>
                 </div>
                 <div class="arrow-indicator">→</div>
@@ -158,9 +143,8 @@
             </button>
           </div>
 
-          <!-- Step 1 Qualification Ads & Scripts -->
-          <div class="mt-4 flex flex-col items-center justify-center gap-3 overflow-hidden">
-            <script src="https://pl31062020.profitableratecpmnetwork.com/6a/a9/08/6aa90833743ee96e8b514d4edb152eac.js"></script>
+          <!-- Step 2 Ad Banner -->
+          <div class="mt-4 flex justify-center overflow-hidden">
             <script>
               atOptions = {
                 'key' : '4b681073403eeb8735708f877401c78b',
@@ -171,7 +155,6 @@
               };
             </script>
             <script src="https://www.highrevenueformat.com/4b681073403eeb8735708f877401c78b/invoke.js"></script>
-            <script src="https://pl31062022.profitableratecpmnetwork.com/fa/fb/e9/fafbe9e17c97dacf129af5786e578f6a.js"></script>
           </div>
         </section>
 
@@ -189,10 +172,10 @@
           </div>
 
           <h3 class="text-xl font-extrabold text-[#0f0f11] mb-1.5">
-            Checking Educational Match...
+            Verifying Work Experience...
           </h3>
           <p class="text-sm text-[#64748b] max-w-sm mx-auto mb-5 min-h-[36px]">
-            Filtering thousands of verified employer requirements for your qualification...
+            Matching current openings, work-from-home roles, and immediate onboarding slots...
           </p>
 
           <!-- 3-Second Visual Progress Indicator -->
@@ -263,7 +246,7 @@
 
         <div id="toastNotification" class="inline-flex items-center gap-2.5 bg-white/95 border border-[#e6e2d8] text-[#334155] text-xs py-2 px-4 rounded-full shadow-md transition-all duration-300 opacity-95">
           <span class="w-2 h-2 rounded-full bg-[#00b894]"></span>
-          <span id="toastText" class="font-medium text-slate-800">Rahul from Bangalore just matched with a ₹55,000/mo Remote Role</span>
+          <span id="toastText" class="font-medium text-slate-800">Priya from Mumbai just matched with a ₹65,000/mo Remote Role</span>
         </div>
       </div>
 
@@ -271,7 +254,7 @@
   </main>
 
   <script>
-    // Page 1 Controller
+    // Page 2 Controller
     const stepContainer = document.getElementById("stepContainer");
     const loadingState = document.getElementById("loadingState");
     const loaderProgressBar = document.getElementById("loaderProgressBar");
@@ -280,10 +263,8 @@
     // Option Click Handler
     document.querySelectorAll(".option-btn").forEach(btn => {
       btn.addEventListener("click", () => {
-        const eduValue = btn.getAttribute("data-value");
-        
-        // Save choice in sessionStorage
-        sessionStorage.setItem("edu", eduValue);
+        const expValue = btn.getAttribute("data-value");
+        sessionStorage.setItem("exp", expValue);
 
         // Show 3-second loader
         stepContainer.classList.add("hidden");
@@ -308,14 +289,14 @@
         // Redirect after 3 seconds with query parameters intact
         setTimeout(() => {
           const params = new URLSearchParams(window.location.search);
-          params.set("edu", eduValue);
-          window.location.href = "experience.html?" + params.toString();
+          params.set("exp", expValue);
+          window.location.href = "salary.html?" + params.toString();
         }, 3000);
       });
     });
 
     // Social proof toast
-    const sampleNames = ["Rahul S.", "Priya M.", "Amit K.", "Neha P.", "Vikram R.", "Ananya S."];
+    const sampleNames = ["Amit K.", "Priya M.", "Rahul S.", "Neha P.", "Vikram R.", "Ananya S."];
     const sampleLocations = ["Bangalore", "Mumbai", "Delhi NCR", "Hyderabad", "Pune", "Chennai"];
     const sampleSalaries = ["₹35,000/mo", "₹50,000/mo", "₹65,000/mo", "₹85,000/mo"];
     const sampleRoles = ["Work From Home Specialist", "Data Operations", "Project Coordinator", "Customer Support Lead"];
