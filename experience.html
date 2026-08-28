@@ -144,6 +144,38 @@
           </div>
         </section>
 
+        <!-- 3-SECOND INTERSTITIAL LOADING CARD -->
+        <section id="loadingState" class="step-card hidden py-6 text-center">
+          <!-- Mint Animated Radar / Scanner Icon -->
+          <div class="relative w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full border-4 border-[#00b894]/20 animate-ping"></div>
+            <div class="absolute inset-2 rounded-full border-4 border-t-[#00b894] border-r-[#00cec9] border-b-transparent border-l-transparent animate-spin"></div>
+            <div class="w-12 h-12 rounded-full bg-[#00b894]/10 border border-[#00b894]/30 flex items-center justify-center shadow-inner">
+              <svg class="w-6 h-6 text-[#00b894] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-extrabold text-[#0f0f11] mb-1.5">
+            Verifying Work Experience...
+          </h3>
+          <p class="text-sm text-[#64748b] max-w-sm mx-auto mb-5 min-h-[36px]">
+            Matching current seniority openings, work-from-home roles, and immediate onboarding slots...
+          </p>
+
+          <!-- 3-Second Visual Progress Indicator -->
+          <div class="max-w-xs mx-auto mb-4">
+            <div class="w-full bg-[#f1ede6] rounded-full h-2 overflow-hidden border border-[#e6e2d8]">
+              <div id="loaderProgressBar" class="h-2 bg-gradient-to-r from-[#00b894] via-[#00cec9] to-[#16a34a] rounded-full w-0 transition-all duration-[3000ms] ease-linear"></div>
+            </div>
+            <div class="flex justify-between items-center text-[11px] text-[#64748b] font-mono mt-1.5">
+              <span>Matching records</span>
+              <span id="loaderCountDown" class="font-bold text-[#00b894]">3s</span>
+            </div>
+          </div>
+        </section>
+
       </div>
 
       <!-- Trust Badges & Indian Testimonial Ticker -->
@@ -179,15 +211,43 @@
   </main>
 
   <script>
-    // Page 2 Controller (Clean Experience Selection -> Instant Nav to Salary)
+    // Page 2 Controller: Experience Selection -> 3-Second Matching Loader -> Redirects to Page 3 (salary.html)
+    const stepContainer = document.getElementById("stepContainer");
+    const loadingState = document.getElementById("loadingState");
+    const loaderProgressBar = document.getElementById("loaderProgressBar");
+    const loaderCountDown = document.getElementById("loaderCountDown");
+
     document.querySelectorAll(".option-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const expValue = btn.getAttribute("data-value");
         sessionStorage.setItem("exp", expValue);
 
-        const params = new URLSearchParams(window.location.search);
-        params.set("exp", expValue);
-        window.location.href = "salary.html?" + params.toString();
+        // Show 3-second loader screen
+        stepContainer.classList.add("hidden");
+        loadingState.classList.remove("hidden");
+        loadingState.classList.add("active");
+
+        requestAnimationFrame(() => {
+          loaderProgressBar.style.width = "100%";
+        });
+
+        let remaining = 3;
+        const interval = setInterval(() => {
+          remaining--;
+          if (remaining > 0) {
+            loaderCountDown.textContent = remaining + "s";
+          } else {
+            loaderCountDown.textContent = "Done!";
+            clearInterval(interval);
+          }
+        }, 1000);
+
+        // Redirect to salary.html after 3 seconds with parameters preserved
+        setTimeout(() => {
+          const params = new URLSearchParams(window.location.search);
+          params.set("exp", expValue);
+          window.location.href = "salary.html?" + params.toString();
+        }, 3000);
       });
     });
 

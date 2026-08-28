@@ -1,45 +1,35 @@
-# High-Converting Multi-Page Jobs Traffic Arbitrage Funnel
+# Multi-Page Traffic Arbitrage Funnel Architecture
 
-A fast, mobile-optimized 3-page quiz funnel built specifically for traffic arbitration, affiliate marketing, and CPA/CPL campaigns.
+A 4-step separate-page high-converting job matching funnel designed for traffic arbitration and affiliate marketing.
 
 ---
 
-## 🚀 3-Page Funnel Architecture
+## 🚀 4-Step Funnel Flow
 
 1. **Page 1: `index.html` (Qualification)**
-   * User selects educational background.
+   * **URL:** `/` or `/index.html`
    * Monetized with Qualification ad scripts.
-   * Shows 3-second loader screen (with 300x250 and 728x90 ads).
-   * Automatically forwards user choice and UTM parameters to `experience.html`.
+   * On selection: Runs **3-second matching loader** (with 300x250 & 728x90 ads).
+   * Redirects to `experience.html` preserving all parameters.
 
 2. **Page 2: `experience.html` (Experience)**
-   * User selects work experience level.
-   * Monetized with 468x60 banner.
-   * Shows 3-second loader screen (with 300x250 and 728x90 ads).
-   * Automatically forwards user choice and UTM parameters to `salary.html`.
+   * **URL:** `/experience.html`
+   * Clean question screen (no banner ads).
+   * On selection: Runs **3-second matching loader** (clean, no ads).
+   * Redirects to `salary.html` preserving all parameters.
 
-3. **Page 3: `salary.html` (Salary & Final Results)**
-   * User selects expected monthly compensation.
-   * Shows 3-second loader screen (with 300x250 and 728x90 ads).
-   * Upon completion:
-     - Injects monetization tag script (`//wwr.giriudog.com/?tag=8114c8aa`).
-     - Reveals congratulations match card and urgency timer (5:00).
-     - **CTA 1 (Upload Resume / CV)**: Opens `https://wwpa.giriuker.com/redirect-zone/b960d9aa`.
-     - **CTA 2 (View Matching Jobs Now)**: Opens `https://job24dev.pages.dev/`.
-     - Preserves and forwards all tracking parameters (`utm_*`, `click_id`, `subid`, `edu`, `exp`, `sal`).
+3. **Page 3: `salary.html` (Salary)**
+   * **URL:** `/salary.html`
+   * Clean question screen (no banner ads).
+   * On selection: Runs **3-second matching loader** (clean, no ads).
+   * Redirects to `results.html` preserving all parameters.
 
----
-
-## 📁 File Structure
-
-```
-.
-├── index.html         # Page 1: Qualification Step
-├── experience.html    # Page 2: Experience Step
-├── salary.html        # Page 3: Salary Step & Final CTA Results
-├── style.css          # Shared design system (Creamy White + Mint Identity)
-└── README.md          # Project documentation
-```
+4. **Page 4: `results.html` (Final Job Matches)**
+   * **URL:** `/results.html`
+   * Triggers arbitrage tag script (`//wwr.giriudog.com/?tag=8114c8aa`).
+   * Displays unlocked job matches, 5:00 countdown timer, and verified badges.
+   * **CTA 1 (Upload Resume / CV)**: `https://wwpa.giriuker.com/redirect-zone/b960d9aa`
+   * **CTA 2 (VIEW MATCHING JOBS NOW)**: `https://job24dev.pages.dev/`
 
 ---
 
