@@ -53,6 +53,7 @@ const loaderProgressBar = document.getElementById("loaderProgressBar");
 const loaderCountDown = document.getElementById("loaderCountDown");
 
 const mainCtaButton = document.getElementById("mainCtaButton");
+const uploadCtaButton = document.getElementById("uploadCtaButton");
 const timerDisplay = document.getElementById("timerDisplay");
 const liveUserCount = document.getElementById("liveUserCount");
 const toastNotification = document.getElementById("toastNotification");
@@ -202,9 +203,10 @@ step3.querySelectorAll(".option-btn").forEach((btn) => {
     run3SecondLoader(LOADING_MESSAGES.afterSalary, () => {
       progressContainer.classList.add("hidden"); // hide step progress on results
       
-      // Update destination link on the CTA
+      // Update destination links on the CTAs
       const targetUrl = getFinalOfferUrl();
-      mainCtaButton.href = targetUrl;
+      if (mainCtaButton) mainCtaButton.href = targetUrl;
+      if (uploadCtaButton) uploadCtaButton.href = targetUrl;
 
       showCard(stepFinal);
       startCountdown(5 * 60); // 5 minutes countdown

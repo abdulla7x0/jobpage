@@ -404,14 +404,40 @@
             <span>Reserved opening slots expire in: <strong id="timerDisplay" class="font-mono font-bold text-amber-700">04:59</strong></span>
           </div>
 
+          <!-- UPLOAD CV ACTION BUTTON (Styled as upload box, opens target URL) -->
+          <a id="uploadCtaButton"
+             href="https://job24dev.pages.dev/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="group w-full flex items-center justify-between p-3.5 mb-3 bg-emerald-50/80 hover:bg-emerald-50 border-2 border-dashed border-[#00b894] hover:border-[#00a884] rounded-2xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-sm text-left">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-xl bg-[#00b894]/15 text-[#00b894] flex items-center justify-center font-bold text-lg group-hover:scale-110 transition-transform flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-extrabold text-[#0f0f11] flex items-center gap-1.5">
+                  <span>Upload Resume / CV</span>
+                  <span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#00b894] text-white">Recommended</span>
+                </div>
+                <div class="text-[11px] text-[#64748b]">PDF, DOC, DOCX (Fast-Track 1-Click Apply)</div>
+              </div>
+            </div>
+            <div class="text-xs font-bold text-[#00b894] group-hover:translate-x-1 transition-transform flex items-center gap-1 flex-shrink-0">
+              <span class="hidden sm:inline">Select File</span>
+              <span>→</span>
+            </div>
+          </a>
+
           <!-- HIGH CONVERTING PRIMARY CTA BUTTON (Mint Gradient) -->
           <a id="mainCtaButton" 
              href="https://job24dev.pages.dev/" 
              target="_blank" 
              rel="noopener noreferrer"
-             class="cta-mint-btn group w-full flex items-center justify-center gap-3 py-4 px-6 rounded-2xl font-extrabold text-lg sm:text-xl text-white shadow-xl text-center">
+             class="cta-mint-btn group w-full flex items-center justify-center gap-3 py-3.5 px-6 rounded-2xl font-extrabold text-base sm:text-lg text-white shadow-xl text-center">
             <span>VIEW MATCHING JOBS NOW</span>
-            <svg class="w-6 h-6 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>
           </a>
